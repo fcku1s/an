@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -19,10 +20,47 @@ body{
     line-height:1.7;
 }
 
+/* =========================
+   全屏水印
+========================= */
+
+.watermark{
+    position:fixed;
+    inset:-10%;
+    z-index:9999;
+    pointer-events:none;
+    overflow:hidden;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:120px;
+
+    transform:rotate(-25deg);
+    opacity:.055;
+}
+
+.watermark span{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+    font-weight:600;
+    color:#555;
+    white-space:nowrap;
+    user-select:none;
+}
+
+/* =========================
+   页面
+========================= */
+
 .container{
     width:100%;
     max-width:720px;
     margin:0 auto;
+    position:relative;
+    z-index:1;
 }
 
 .header{
@@ -47,32 +85,80 @@ body{
     font-size:14px;
 }
 
+/* =========================
+   下载区域
+========================= */
+
 .download{
-    background:#fff;
-    border:1px solid #e5e7eb;
-    border-radius:16px;
-    padding:20px;
+    position:relative;
+    background:linear-gradient(135deg,#007aff,#005bea);
+    border:none;
+    border-radius:18px;
+    padding:22px 20px;
     margin-bottom:20px;
-    box-shadow:0 4px 16px rgba(0,0,0,.04);
+    box-shadow:0 8px 24px rgba(0,122,255,.25);
+    overflow:hidden;
+}
+
+.download::after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    right:-70px;
+    top:-80px;
+    background:rgba(255,255,255,.12);
+    border-radius:50%;
 }
 
 .download-title{
-    font-size:17px;
-    font-weight:700;
-    margin-bottom:12px;
+    position:relative;
+    z-index:1;
+    font-size:20px;
+    font-weight:800;
+    color:#fff;
+    margin-bottom:6px;
+}
+
+.download-subtitle{
+    position:relative;
+    z-index:1;
+    color:rgba(255,255,255,.9);
+    font-size:13px;
+    margin-bottom:15px;
 }
 
 .download a{
+    position:relative;
+    z-index:1;
     display:block;
-    background:#007aff;
-    color:#fff;
+    background:#fff;
+    color:#0068d9;
     text-decoration:none;
     text-align:center;
-    padding:11px 14px;
-    border-radius:10px;
+    padding:14px 14px;
+    border-radius:12px;
     margin:8px 0;
-    font-weight:600;
+    font-size:16px;
+    font-weight:800;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
 }
+
+.download a:active{
+    transform:scale(.98);
+}
+
+.download-tip{
+    position:relative;
+    z-index:1;
+    color:rgba(255,255,255,.9);
+    font-size:12px;
+    margin-top:12px;
+}
+
+/* =========================
+   提示
+========================= */
 
 .tip{
     background:#eef7ff;
@@ -93,6 +179,27 @@ body{
     font-size:14px;
     color:#374151;
 }
+
+.security{
+    background:#fff8e6;
+    border:1px solid #ffd666;
+    border-left:5px solid #faad14;
+    padding:14px 15px;
+    border-radius:10px;
+    margin:20px 0;
+    font-size:14px;
+    color:#4b3b00;
+}
+
+.security-title{
+    font-weight:800;
+    color:#8a5a00;
+    margin-bottom:5px;
+}
+
+/* =========================
+   步骤
+========================= */
 
 .step{
     background:#fff;
@@ -141,6 +248,46 @@ code{
     font-size:13px;
 }
 
+/* =========================
+   订阅问题
+========================= */
+
+.subscribe-help{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:20px;
+    margin:20px 0;
+    box-shadow:0 4px 16px rgba(0,0,0,.04);
+}
+
+.subscribe-help h2{
+    margin:0 0 12px;
+    font-size:19px;
+    color:#111827;
+}
+
+.subscribe-help p{
+    margin:8px 0;
+    font-size:14px;
+}
+
+.subscribe-step{
+    background:#f8fafc;
+    border-radius:10px;
+    padding:12px 14px;
+    margin-top:10px;
+    font-size:14px;
+}
+
+.subscribe-step strong{
+    color:#007aff;
+}
+
+/* =========================
+   Footer
+========================= */
+
 .footer{
     text-align:center;
     color:#9ca3af;
@@ -149,13 +296,15 @@ code{
 }
 
 @media(max-width:480px){
+
     body{
         padding:10px 8px 40px;
     }
 
     .header,
     .download,
-    .step{
+    .step,
+    .subscribe-help{
         padding:16px;
         border-radius:13px;
     }
@@ -167,32 +316,110 @@ code{
     .step h2{
         font-size:17px;
     }
+
+    .download-title{
+        font-size:19px;
+    }
+
+    .watermark{
+        grid-template-columns:repeat(3,1fr);
+        grid-auto-rows:100px;
+    }
+
+    .watermark span{
+        font-size:17px;
+    }
 }
 </style>
+
 </head>
 
 <body>
 
+<!-- =========================
+     全屏 Dankewed 水印
+========================= -->
+
+<div class="watermark" aria-hidden="true">
+
+<span>dankewed.com</span> <span>dankewed.com</span> <span>dankewed.com</span> <span>dankewed.com</span>
+
+<span>dankewed.com</span> <span>dankewed.com</span> <span>dankewed.com</span> <span>dankewed.com</span>
+
+<span>dankewed.com</span> <span>dankewed.com</span> <span>dankewed.com</span> <span>dankewed.com</span>
+
+<span>dankewed.com</span> <span>dankewed.com</span> <span>dankewed.com</span> <span>dankewed.com</span>
+
+<span>dankewed.com</span> <span>dankewed.com</span> <span>dankewed.com</span> <span>dankewed.com</span>
+
+<span>dankewed.com</span> <span>dankewed.com</span> <span>dankewed.com</span> <span>dankewed.com</span>
+
+</div>
+
 <div class="container">
 
 <div class="header">
+
 <h1>🤖 安卓客户端配置教程</h1>
-<p>按照下面步骤操作，即可完成 Karing 安卓客户端配置。</p>
+
+<p>
+按照下面步骤操作，即可完成 Karing 安卓客户端配置。
+</p>
+
 </div>
+
+<!-- =========================
+     安卓客户端下载
+========================= -->
 
 <div class="download">
-<div class="download-title">📦 安卓客户端下载</div>
+
+<div class="download-title">
+📦 Karing 安卓客户端下载
+</div>
+
+<div class="download-subtitle">
+安卓手机 / 安卓平板均可使用
+</div>
 
 <a href="https://github.com/KaringX/karing/releases/download/v1.2.25.2802/karing_1.2.25.2802_android_arm.apk" target="_blank">
-下载 Karing 安卓版
+
+⬇️ 立即下载 Karing 安卓版
+
 </a>
 
-<div class="tip">
-💡 下载完成后打开 APK 进行安装。如果系统提示允许安装未知来源应用，请按照系统提示允许安装。
+<div class="download-tip">
+点击上方按钮直接下载 APK。下载完成后打开文件进行安装。
 </div>
+
+</div>
+
+<div class="tip">
+
+💡 如果系统提示「允许安装未知来源应用」，请按照 Android 系统提示允许安装即可。
+
+</div>
+
+<!-- =========================
+     安全提醒
+========================= -->
+
+<div class="security">
+
+<div class="security-title">
+⚠️ 订阅安全提醒
+</div>
+
+订阅地址属于你的账户使用信息，请<strong>不要分享给其他人</strong>，也不要发布到群组、论坛或其他公开平台。
+
+<br><br>
+
+如需在其他设备使用，请重新登录官网获取对应设备的订阅地址。
+
 </div>
 
 <div class="step">
+
 <h2>第一步：同意隐私协议</h2>
 
 <ol>
@@ -201,10 +428,14 @@ code{
 <li>点击「接受并继续」。</li>
 </ol>
 
-<img src="https://i.ibb.co/m5CJh6p7/1.jpg" alt="同意隐私协议">
+<img
+src="https://i.ibb.co/m5CJh6p7/1.jpg"
+alt="同意隐私协议">
+
 </div>
 
 <div class="step">
+
 <h2>第二步：选择语言</h2>
 
 <ol>
@@ -213,10 +444,14 @@ code{
 <li>点击右上角「下一步」。</li>
 </ol>
 
-<img src="https://i.ibb.co/VK1z381/2.jpg" alt="选择简体中文">
+<img
+src="https://i.ibb.co/VK1z381/2.jpg"
+alt="选择简体中文">
+
 </div>
 
 <div class="step">
+
 <h2>第三步：TV 设置</h2>
 
 <ol>
@@ -226,10 +461,14 @@ code{
 <li>点击右上角「下一步」。</li>
 </ol>
 
-<img src="https://i.ibb.co/Q7T49KQ5/3.jpg" alt="TV 设置">
+<img
+src="https://i.ibb.co/Q7T49KQ5/3.jpg"
+alt="TV 设置">
+
 </div>
 
 <div class="step">
+
 <h2>第四步：选择国家与地区</h2>
 
 <ol>
@@ -242,10 +481,14 @@ code{
 ⚠️ 请按照你实际所在的国家或地区进行选择，否则可能影响规则分流。
 </div>
 
-<img src="https://i.ibb.co/pvPdVhYr/4.jpg" alt="选择中国">
+<img
+src="https://i.ibb.co/pvPdVhYr/4.jpg"
+alt="选择中国">
+
 </div>
 
 <div class="step">
+
 <h2>第五步：预置分流组设置</h2>
 
 <ol>
@@ -255,10 +498,14 @@ code{
 <li>点击右上角「下一步」。</li>
 </ol>
 
-<img src="https://i.ibb.co/FkhJvbRP/5.jpg" alt="预置分流组设置">
+<img
+src="https://i.ibb.co/FkhJvbRP/5.jpg"
+alt="预置分流组设置">
+
 </div>
 
 <div class="step">
+
 <h2>第六步：完成初始设置</h2>
 
 <ol>
@@ -266,10 +513,14 @@ code{
 <li>点击右上角「完成」。</li>
 </ol>
 
-<img src="https://i.ibb.co/s9B9L3PL/6.jpg" alt="完成初始设置">
+<img
+src="https://i.ibb.co/s9B9L3PL/6.jpg"
+alt="完成初始设置">
+
 </div>
 
 <div class="step">
+
 <h2>第七步：进入添加配置页面</h2>
 
 <ol>
@@ -279,10 +530,14 @@ code{
 <li>点击「添加配置链接」。</li>
 </ol>
 
-<img src="https://i.ibb.co/SD4XgQ5N/7.jpg" alt="添加配置链接">
+<img
+src="https://i.ibb.co/SD4XgQ5N/7.jpg"
+alt="添加配置链接">
+
 </div>
 
 <div class="step">
+
 <h2>第八步：打开会员中心，导入订阅</h2>
 
 <ol>
@@ -293,10 +548,14 @@ code{
 <li>点击橙色「导入订阅」按钮。</li>
 </ol>
 
-<img src="https://i.ibb.co/nMpFwBGB/8.jpg" alt="打开仪表盘导入订阅">
+<img
+src="https://i.ibb.co/nMpFwBGB/8.jpg"
+alt="打开仪表盘导入订阅">
+
 </div>
 
 <div class="step">
+
 <h2>第九步：复制订阅地址</h2>
 
 <ol>
@@ -306,13 +565,17 @@ code{
 </ol>
 
 <div class="tip">
-💡 复制完成后不要修改订阅地址，直接回到 Karing App。
+💡 复制完成后不要修改订阅地址，也不要发送给其他人，直接回到 Karing App。
 </div>
 
-<img src="https://i.ibb.co/hFKQ0RmJ/9.jpg" alt="复制订阅地址">
+<img
+src="https://i.ibb.co/hFKQ0RmJ/9.jpg"
+alt="复制订阅地址">
+
 </div>
 
 <div class="step">
+
 <h2>第十步：粘贴订阅地址</h2>
 
 <ol>
@@ -324,10 +587,14 @@ code{
 <li>点击右上角「✓」完成添加。</li>
 </ol>
 
-<img src="https://i.ibb.co/v4RSB44r/10.jpg" alt="粘贴订阅地址">
+<img
+src="https://i.ibb.co/v4RSB44r/10.jpg"
+alt="粘贴订阅地址">
+
 </div>
 
 <div class="step">
+
 <h2>第十一步：进入服务器选择</h2>
 
 <ol>
@@ -336,10 +603,14 @@ code{
 <li>点击「自动选择」进入服务器选择页面。</li>
 </ol>
 
-<img src="https://i.ibb.co/ym9wwN6x/11.jpg" alt="进入服务器选择">
+<img
+src="https://i.ibb.co/ym9wwN6x/11.jpg"
+alt="进入服务器选择">
+
 </div>
 
 <div class="step">
+
 <h2>第十二步：选择刚才导入的订阅</h2>
 
 <ol>
@@ -349,10 +620,14 @@ code{
 <li>点击该分组展开节点。</li>
 </ol>
 
-<img src="https://i.ibb.co/tT4xvz3z/12.jpg" alt="选择订阅">
+<img
+src="https://i.ibb.co/tT4xvz3z/12.jpg"
+alt="选择订阅">
+
 </div>
 
 <div class="step">
+
 <h2>第十三步：测速并选择节点</h2>
 
 <ol>
@@ -367,10 +642,14 @@ code{
 💡 如果某个节点显示超时或无法测速，可以更换其他节点。
 </div>
 
-<img src="https://i.ibb.co/V0VJ6hsd/13.jpg" alt="测速并选择节点">
+<img
+src="https://i.ibb.co/V0VJ6hsd/13.jpg"
+alt="测速并选择节点">
+
 </div>
 
 <div class="step">
+
 <h2>第十四步：完成，开始使用 🎉</h2>
 
 <ol>
@@ -384,7 +663,78 @@ code{
 ✅ 开启成功后，系统状态栏通常会出现 VPN 或钥匙形状的连接提示。
 </div>
 
-<img src="https://i.ibb.co/5gCxFDpC/14.jpg" alt="启动 Karing">
+<img
+src="https://i.ibb.co/5gCxFDpC/14.jpg"
+alt="启动 Karing">
+
+</div>
+
+<!-- =========================
+     订阅失败解决办法
+========================= -->
+
+<div class="subscribe-help">
+
+<h2>🔄 订阅失败怎么办？</h2>
+
+<p>
+如果出现<strong>订阅无法导入、订阅失效、没有节点或更新失败</strong>等情况，不需要反复使用旧订阅地址。
+</p>
+
+<div class="subscribe-step">
+<strong>① 返回官网</strong><br>
+打开 <code>dankewed.com</code>
+</div>
+
+<div class="subscribe-step">
+<strong>② 刷新页面</strong><br>
+重新刷新官网并进入「仪表盘」。
+</div>
+
+<div class="subscribe-step">
+<strong>③ 重新获取订阅</strong><br>
+进入「导入订阅」，重新获取一个新的订阅地址。
+</div>
+
+<div class="subscribe-step">
+<strong>④ 重新导入 Karing</strong><br>
+将新获取的订阅地址重新添加到 Karing 即可。
+</div>
+
+<div class="warning">
+
+⚠️ <strong>为什么需要重新获取？</strong>
+
+<br><br>
+
+本站订阅采用「阅后即焚」模式，订阅地址在获取或使用后无法重复使用。
+
+<br><br>
+
+遇到订阅失败时，直接<strong>刷新官网 → 重新获取新订阅 → 再次导入</strong>即可。
+
+</div>
+
+</div>
+
+<!-- =========================
+     最终提醒
+========================= -->
+
+<div class="security">
+
+<div class="security-title">
+🔐 警告
+</div>
+
+<strong>请勿分享订阅地址。</strong>
+
+
+
+<br><br>
+
+
+
 </div>
 
 <div class="footer">
