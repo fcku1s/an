@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>安卓客户端配置教程</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:20px 12px 50px;
+    background:#f5f7fa;
+    color:#222;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;
+    line-height:1.7;
+}
+
+.container{
+    width:100%;
+    max-width:720px;
+    margin:0 auto;
+}
+
+.header{
+    background:#fff;
+    padding:24px 20px;
+    border-radius:16px;
+    margin-bottom:20px;
+    border:1px solid #e5e7eb;
+    box-shadow:0 4px 16px rgba(0,0,0,.04);
+}
+
+.header h1{
+    margin:0;
+    font-size:26px;
+    line-height:1.4;
+    color:#111827;
+}
+
+.header p{
+    margin:10px 0 0;
+    color:#6b7280;
+    font-size:14px;
+}
+
+.download{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 4px 16px rgba(0,0,0,.04);
+}
+
+.download-title{
+    font-size:17px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.download a{
+    display:block;
+    background:#007aff;
+    color:#fff;
+    text-decoration:none;
+    text-align:center;
+    padding:11px 14px;
+    border-radius:10px;
+    margin:8px 0;
+    font-weight:600;
+}
+
+.tip{
+    background:#eef7ff;
+    border-left:4px solid #007aff;
+    padding:11px 14px;
+    border-radius:8px;
+    margin-top:14px;
+    font-size:14px;
+    color:#374151;
+}
+
+.warning{
+    background:#fff4ed;
+    border-left:4px solid #ff6b35;
+    padding:11px 14px;
+    border-radius:8px;
+    margin-top:14px;
+    font-size:14px;
+    color:#374151;
+}
+
+.step{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:20px;
+    margin:18px 0;
+    box-shadow:0 4px 16px rgba(0,0,0,.04);
+}
+
+.step h2{
+    font-size:18px;
+    margin:0 0 14px;
+    padding:9px 12px;
+    background:#f0f5ff;
+    border-left:4px solid #007aff;
+    border-radius:7px;
+    color:#111827;
+}
+
+.step ol{
+    margin:0;
+    padding-left:22px;
+}
+
+.step li{
+    margin-bottom:7px;
+}
+
+.step img{
+    display:block;
+    width:100%;
+    max-width:300px;
+    height:auto;
+    margin:16px auto 4px;
+    border-radius:14px;
+    border:1px solid #e5e7eb;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+code{
+    background:#f3f4f6;
+    padding:2px 6px;
+    border-radius:5px;
+    color:#111827;
+    font-size:13px;
+}
+
+.footer{
+    text-align:center;
+    color:#9ca3af;
+    font-size:13px;
+    padding:20px 0;
+}
+
+@media(max-width:480px){
+    body{
+        padding:10px 8px 40px;
+    }
+
+    .header,
+    .download,
+    .step{
+        padding:16px;
+        border-radius:13px;
+    }
+
+    .header h1{
+        font-size:23px;
+    }
+
+    .step h2{
+        font-size:17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+<h1>🤖 安卓客户端配置教程</h1>
+<p>按照下面步骤操作，即可完成 Karing 安卓客户端配置。</p>
+</div>
+
+<div class="download">
+<div class="download-title">📦 安卓客户端下载</div>
+
+<a href="https://github.com/KaringX/karing/releases/download/v1.2.25.2802/karing_1.2.25.2802_android_arm.apk" target="_blank">
+下载 Karing 安卓版
+</a>
+
+<div class="tip">
+💡 下载完成后打开 APK 进行安装。如果系统提示允许安装未知来源应用，请按照系统提示允许安装。
+</div>
+</div>
+
+<div class="step">
+<h2>第一步：同意隐私协议</h2>
+
+<ol>
+<li>打开 Karing App。</li>
+<li>首次打开会出现隐私协议页面。</li>
+<li>点击「接受并继续」。</li>
+</ol>
+
+<img src="https://i.ibb.co/m5CJh6p7/1.jpg" alt="同意隐私协议">
+</div>
+
+<div class="step">
+<h2>第二步：选择语言</h2>
+
+<ol>
+<li>在语言列表中找到「简体中文」。</li>
+<li>选择「简体中文」。</li>
+<li>点击右上角「下一步」。</li>
+</ol>
+
+<img src="https://i.ibb.co/VK1z381/2.jpg" alt="选择简体中文">
+</div>
+
+<div class="step">
+<h2>第三步：TV 设置</h2>
+
+<ol>
+<li>进入 TV 设置页面。</li>
+<li>这里不需要开启任何开关。</li>
+<li>保持默认设置。</li>
+<li>点击右上角「下一步」。</li>
+</ol>
+
+<img src="https://i.ibb.co/Q7T49KQ5/3.jpg" alt="TV 设置">
+</div>
+
+<div class="step">
+<h2>第四步：选择国家与地区</h2>
+
+<ol>
+<li>在国家或地区列表中找到「CN 中国」。</li>
+<li>选择「CN 中国」。</li>
+<li>点击右上角「下一步」。</li>
+</ol>
+
+<div class="warning">
+⚠️ 请按照你实际所在的国家或地区进行选择，否则可能影响规则分流。
+</div>
+
+<img src="https://i.ibb.co/pvPdVhYr/4.jpg" alt="选择中国">
+</div>
+
+<div class="step">
+<h2>第五步：预置分流组设置</h2>
+
+<ol>
+<li>进入预置分流组设置页面。</li>
+<li>按照默认选项即可。</li>
+<li>无需额外修改。</li>
+<li>点击右上角「下一步」。</li>
+</ol>
+
+<img src="https://i.ibb.co/FkhJvbRP/5.jpg" alt="预置分流组设置">
+</div>
+
+<div class="step">
+<h2>第六步：完成初始设置</h2>
+
+<ol>
+<li>保持「新手模式」开启。</li>
+<li>点击右上角「完成」。</li>
+</ol>
+
+<img src="https://i.ibb.co/s9B9L3PL/6.jpg" alt="完成初始设置">
+</div>
+
+<div class="step">
+<h2>第七步：进入添加配置页面</h2>
+
+<ol>
+<li>进入 Karing 首页。</li>
+<li>找到「添加配置」。</li>
+<li>进入添加配置页面。</li>
+<li>点击「添加配置链接」。</li>
+</ol>
+
+<img src="https://i.ibb.co/SD4XgQ5N/7.jpg" alt="添加配置链接">
+</div>
+
+<div class="step">
+<h2>第八步：打开会员中心，导入订阅</h2>
+
+<ol>
+<li>打开会员中心：<code>dankewed.com</code></li>
+<li>登录你的会员账号。</li>
+<li>点击底部「仪表盘」。</li>
+<li>找到你的套餐信息。</li>
+<li>点击橙色「导入订阅」按钮。</li>
+</ol>
+
+<img src="https://i.ibb.co/nMpFwBGB/8.jpg" alt="打开仪表盘导入订阅">
+</div>
+
+<div class="step">
+<h2>第九步：复制订阅地址</h2>
+
+<ol>
+<li>在导入订阅窗口中找到 Android 分类。</li>
+<li>点击「复制订阅地址」。</li>
+<li>订阅地址会自动复制到手机剪贴板。</li>
+</ol>
+
+<div class="tip">
+💡 复制完成后不要修改订阅地址，直接回到 Karing App。
+</div>
+
+<img src="https://i.ibb.co/hFKQ0RmJ/9.jpg" alt="复制订阅地址">
+</div>
+
+<div class="step">
+<h2>第十步：粘贴订阅地址</h2>
+
+<ol>
+<li>回到 Karing。</li>
+<li>进入「配置链接/内容」输入框。</li>
+<li>长按输入框，点击「粘贴」。</li>
+<li>在「备注」栏填写一个容易识别的名称。</li>
+<li>确认订阅地址无误。</li>
+<li>点击右上角「✓」完成添加。</li>
+</ol>
+
+<img src="https://i.ibb.co/v4RSB44r/10.jpg" alt="粘贴订阅地址">
+</div>
+
+<div class="step">
+<h2>第十一步：进入服务器选择</h2>
+
+<ol>
+<li>返回 Karing 首页。</li>
+<li>找到当前的「自动选择」区域。</li>
+<li>点击「自动选择」进入服务器选择页面。</li>
+</ol>
+
+<img src="https://i.ibb.co/ym9wwN6x/11.jpg" alt="进入服务器选择">
+</div>
+
+<div class="step">
+<h2>第十二步：选择刚才导入的订阅</h2>
+
+<ol>
+<li>进入「选择服务器」页面。</li>
+<li>找到刚才添加的订阅分组。</li>
+<li>一般会显示为你之前填写的备注名称。</li>
+<li>点击该分组展开节点。</li>
+</ol>
+
+<img src="https://i.ibb.co/tT4xvz3z/12.jpg" alt="选择订阅">
+</div>
+
+<div class="step">
+<h2>第十三步：测速并选择节点</h2>
+
+<ol>
+<li>点击右上角的闪电 ⚡ 图标。</li>
+<li>等待所有节点完成测速。</li>
+<li>查看各节点延迟。</li>
+<li>一般来说延迟数值越低，响应速度越快。</li>
+<li>选择一个延迟较低且稳定的节点。</li>
+</ol>
+
+<div class="tip">
+💡 如果某个节点显示超时或无法测速，可以更换其他节点。
+</div>
+
+<img src="https://i.ibb.co/V0VJ6hsd/13.jpg" alt="测速并选择节点">
+</div>
+
+<div class="step">
+<h2>第十四步：完成，开始使用 🎉</h2>
+
+<ol>
+<li>返回 Karing 首页。</li>
+<li>点击底部圆形开关。</li>
+<li>首次启动时，如果 Android 弹出 VPN 权限请求，请点击「允许」。</li>
+<li>连接成功后即可使用。</li>
+</ol>
+
+<div class="tip">
+✅ 开启成功后，系统状态栏通常会出现 VPN 或钥匙形状的连接提示。
+</div>
+
+<img src="https://i.ibb.co/5gCxFDpC/14.jpg" alt="启动 Karing">
+</div>
+
+<div class="footer">
+Dankewed · 安卓客户端配置教程
+</div>
+
+</div>
+
+</body>
+</html>
